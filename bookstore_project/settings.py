@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     #local
     'users.apps.UsersConfig', #new
+    'pages.apps.PagesConfig', #new
 
 ]
 
@@ -58,7 +59,9 @@ ROOT_URLCONF = 'bookstore_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'), #new forces all templates in one folder
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
