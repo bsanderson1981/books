@@ -4,6 +4,10 @@ services:
   web:
     build: .
     command: python /code/manage.py runserver 0.0.0.0:8000
+
+    environment: 
+      - YML_SECRET_KEY=9l+%-8mt6v&^1n=@t_$$yclk98qc$$_=pz0ymy06qn^igm9@zslr
+      - DEBUG=1
     volumes:
       - .:/code
     
