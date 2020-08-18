@@ -173,3 +173,7 @@ ACCOUNT_UNIQUE_EMAIL = True
 
 #default email "from address"  setting 
 DEFAULT_FROM_EMAIL = 'admin@djangobookstore.com'
+
+#USER UPLOAD MEDIA LOCATIONS:
+MEDIA_URL = '/meida/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

@@ -6,6 +6,9 @@
 
   
         <div class="book-detail">
+            {% if book.cover %} <!-- # if no book cover image uploaded - will by pass and not error out -->
+            <img class="bookcover" src="{{ book.cover.url}}" alt="{{book.title}}">
+            {% endif %}
             <h2><a href="">{{book.title}}</a></h2>
             <p>Author: {{book.author }} </p>
             <p>Price: {{book.price }} </p>
