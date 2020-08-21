@@ -20,6 +20,12 @@ class Book(models.Model):
 
     cover =  models.ImageField(upload_to='covers/', blank=True) # 4 user upload media
 
+    class Meta: #add permissions access to class
+        permissions = [
+            ('special_status', 'Can read all books'),
+
+
+        ]
     def __str__(self):
         return self.title
 
