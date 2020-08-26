@@ -8,6 +8,8 @@ services:
     environment: 
       - YML_SECRET_KEY=9l+%-8mt6v&^1n=@t_$$yclk98qc$$_=pz0ymy06qn^igm9@zslr
       - DEBUG=1
+      - STRIPE_TEST_PUBLISHABLE_KEY=pk_test_51HIk74K81SrHXQkvvV5MjQLoQ3kZwa8eLtsXLrWaercZPk4yyu2cYtRKcEMCSUlTzG1415qUUb5uHTYg904SjCDR00pM6Y2P41
+      - STRIPE_TEST_SECRECT_KEY=sk_test_51HIk74K81SrHXQkvDFiO86k1diWPVZagLfG08NwGTaodBUXWhNrtsKi2Gdrnuk4d8oMRtICHM0OWUMzL940cOBfJ00N2RA2jXd
     volumes:
       - .:/code
     
