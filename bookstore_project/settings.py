@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'allauth',
     'allauth.account',
+    'debug_toolbar', # new django debug tool bar
 
     # Local
     'users.apps.UsersConfig',
@@ -64,6 +65,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',  # django debug tool bar
 ]
 
 ROOT_URLCONF = 'bookstore_project.urls'
@@ -182,3 +184,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 #Stripe Settings - Dev Only
 STRIPE_TEST_PUBLISHABLE_KEY=os.environ.get('STRIPE_TEST_PUBLISHABLE_KEY')
 STRIPE_TEST_SECRET_KEY=os.environ.get('STRIPE_TEST_SECRECT_KEY')
+
+#django debug tool bar
+import socket
+hostname, _, ips= socket.gethostbyname_ex(socket.gethostname())
+INTERNAL_IPS = [ip[:-1] + "1" for ip in ips]
