@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic', #new static file creater
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
@@ -61,14 +62,25 @@ INSTALLED_APPS = [
 CRISPY_TEMPLATE_PACK = 'bootstrap4' #new
 
 MIDDLEWARE = [
+  
+    'django.middleware.cache.UpdateCacheMiddleware', # missing in my config but in book
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',  # django debug tool bar
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',# missing in my config but in book
+
+
+
+
+
+
+
 ]
 
 ROOT_URLCONF = 'bookstore_project.urls'
@@ -208,3 +220,6 @@ if ENVIRONMENT == 'production':
     # added not in book
     SECURE_REFERRER_POLICY = 'same-origin'
    
+#Heroku Setup DB
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)

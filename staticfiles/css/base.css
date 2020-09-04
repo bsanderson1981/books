@@ -1,0 +1,9 @@
+/* This is a single-line comment */
+h1 {
+  color: red;
+}
+
+.bookcover {
+  height: 300px;
+  width: auto;
+}
