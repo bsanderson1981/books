@@ -25,7 +25,7 @@ ENVIRONMENT = os.environ.get('ENVIRONMENT', default='production')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('YML_SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# SECURITY WARNING: don't run with debug turned on in production!n
 DEBUG = int(os.environ.get('DEBUG', default=0))
 ALLOWED_HOSTS = ['peaceful-basin-36305.herokuapp.com','localhost', '127.0.0.1']
 
