@@ -219,6 +219,7 @@ if ENVIRONMENT == 'production':
     CSRF_COOKIE_SECURE = True
     # added not in book
     SECURE_REFERRER_POLICY = 'same-origin'
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
    
 #Heroku Setup DB
 import dj_database_url
